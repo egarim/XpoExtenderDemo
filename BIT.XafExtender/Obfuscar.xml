@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Obfuscator>
+	<!-- https://docs.obfuscar.com/getting-started/configuration.html -->
+	<AssemblySearchPath path="C:/Users/Joche/.nuget/packages" />
+	<Var name="InPath" value="bin/Release/net472" />
+	<Var name="OutPath" value="$(InPath)/obfuscated" />
+	<Var name="HidePrivateApi" value="true" />
+	<Var name="KeepPublicApi" value="true" />
+	<Var name="HideStrings" value="true" />
+	<Var name="OptimizeMethods" value="true" />
+	<Module file="$(InPath)/BIT.XafExtender.Client.v19.2.6.58.dll" />
+</Obfuscator>

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>$(NetFrameworkVersion)</TargetFramework>
+		<AssemblyName>BIT.XafExtender.Client</AssemblyName>
+		<RootNamespace>BIT.XafExtender.Client</RootNamespace>
+		<PackageTags>DevExpress XPO XAF</PackageTags>
+		<Description>A client application that provide metadata to extend XPO and XAF</Description>
+		<DebugType>Full</DebugType>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DevExpress.ExpressApp" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.Persistent.BaseImpl" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.Xpo" Version="$(DevExpressVersion)" />
+	    <PackageReference Include="MSBuild.Obfuscar" Version="2.2.26.17337">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BIT.MetadataBuilder.Client\BIT.XpoExtender.Client.csproj" />
+	</ItemGroup>
+	<!--Nuget Generation Section Start-->	
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<AssemblyName>BIT.XafExtender.Client.v$(NugetVersion)</AssemblyName>
+		<Version>$(NugetVersion)</Version>
+		<PackageId>BIT.XafExtender.Client</PackageId>
+	</PropertyGroup>
+	<!--Nuget Generation Section End-->
+	<Target Name="CopyPackage" AfterTargets="Pack">
+		<Copy SourceFiles="bin\$(ConfigurationName)\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(USERPROFILE)\Documents\MyNugets\" />
+	</Target>
+</Project>
