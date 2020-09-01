@@ -31,7 +31,6 @@
     <Compile Update="Controllers\CompiledModelControllerWin.Designer.cs">
       <DependentUpon>CompiledModelControllerWin.cs</DependentUpon>
     </Compile>
-    <Compile Update="Controllers\LoadFileController.cs" />
     <Compile Update="WinModule.cs" />
     <Compile Update="WinModule.Designer.cs">
       <DependentUpon>WinModule.cs</DependentUpon>

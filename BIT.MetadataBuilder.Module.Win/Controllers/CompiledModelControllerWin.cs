@@ -49,8 +49,13 @@ namespace BIT.MetadataBuilder.Module.Win.Controllers
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
+
+
+
                
                 Title = "Browse dll Files",
+
+
 
                 CheckFileExists = true,
                 CheckPathExists = true,
